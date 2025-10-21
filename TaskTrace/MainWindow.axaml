@@ -1,0 +1,101 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:TaskTrace.ViewModels"
+		xmlns:abi="clr-namespace:Avalonia.Data;assembly=Avalonia.Base"
+		x:DataType="vm:MainWindowViewModel"
+        x:Class="TaskTrace.MainWindow"
+        Width="900" Height="600"
+        Title="TaskTrace"
+		Background="LightGray">
+	
+	<Window.DataContext>
+		<vm:MainWindowViewModel />
+	</Window.DataContext>
+	
+	<Window.Styles>
+		<Style Selector="Button">
+			<Setter Property="Background" Value="#0076a8"/>
+			<Setter Property="Foreground" Value="Black"/>
+		</Style>
+		
+		<Style Selector="Button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+			<Setter Property="Background" Value="#24467d" />
+			<Setter Property="TextBlock.Foreground" Value="White" />
+		</Style>
+		
+		<Style Selector="Button:pointerover">
+			<Setter Property="Background" Value="#0076a8"/>
+			<Setter Property="Foreground" Value="Black"/>
+		</Style>
+		
+		<Style Selector="TextBox:focus">
+			<Setter Property="Foreground" Value="Black"/>
+		</Style>
+		
+		<Style Selector="TextBox:focus /template/ Border#PART_BorderElement">
+			<Setter Property="Background">
+				<SolidColorBrush Color="White"/>
+			</Setter>
+		</Style>
+	</Window.Styles>
+	
+	<DockPanel>
+		<StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="8">
+			<StackPanel.Styles>
+				<Style Selector="TextBox">
+					<Setter Property="Background" Value="DarkGray"/>
+				</Style>
+			</StackPanel.Styles>
+
+			<TextBox Width="400" Watermark="Select folder..." Text="{Binding FolderPath}" />
+			<Button Content="Browse" Margin="4,0" Command="{Binding BrowseCommand}" />
+			<Button Content="Scan" Margin="4,0" Command="{Binding ScanCommand}" />
+			<Button Content="Export JSON" Margin="4,0" Command="{Binding ExportCommand}" />
+		</StackPanel>
+
+		<DataGrid ItemsSource="{Binding Todos}" AutoGenerateColumns="False" Margin="8">
+			<DataGrid.Styles>
+				<Style Selector="DataGridColumnHeader">
+					<Setter Property="Foreground" Value="White"/>
+					<Setter Property="FontWeight" Value="Bold"/>
+					<Setter Property="Background" Value="Black"/>
+					<Setter Property="BorderThickness" Value="0,0,1,1"/>
+				</Style>
+
+				<Style Selector="DataGrid">
+					<Setter Property="Foreground" Value="Black"/>
+					<Setter Property="FontWeight" Value="Bold"/>
+					<Setter Property="Background" Value="#D3D3D3"/>
+					<Setter Property="BorderBrush" Value="Black"/>
+					<Setter Property="BorderThickness" Value="0,0,1,1"/>
+				</Style>
+				<!-- Rows -->
+				<Style Selector="DataGridRow">
+					<Setter Property="Background" Value="White"/>
+					<Setter Property="Foreground" Value="Black"/>
+					<Setter Property="BorderBrush" Value="Black"/>
+					<Setter Property="BorderThickness" Value="0,0,1,1"/>
+					<!-- right + bottom -->
+				</Style>
+
+				<!-- Hover effect -->
+				<Style Selector="DataGridRow:hover">
+					<Setter Property="Background" Value="#E0E0E0"/>
+				</Style>
+				
+				<!-- Selected row -->
+				<Style Selector="DataGridRow:selected">
+					<Setter Property="Background" Value="#B0B0B0"/>
+					<Setter Property="Foreground" Value="Black"/>
+				</Style>
+			</DataGrid.Styles>
+
+			<DataGrid.Columns>
+				<DataGridTextColumn Header="File" Binding="{Binding FilePath}" Width="*"/>
+				<DataGridTextColumn Header="Line" Binding="{Binding LineNumber}" Width="60"/>
+				<DataGridTextColumn Header="Tag" Binding="{Binding Tag}" Width="100"/>
+				<DataGridTextColumn Header="Text" Binding="{Binding Text}" Width="2*"/>
+			</DataGrid.Columns>
+		</DataGrid>
+	</DockPanel>
+</Window>
