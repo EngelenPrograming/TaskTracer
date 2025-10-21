@@ -24,7 +24,7 @@ download the Exe from the releases Tab on Github
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/TodoScan.git
+git clone https://github.com/engelen305-gif/TaskTracer.git
 ```
 
 ### 2. build the project
