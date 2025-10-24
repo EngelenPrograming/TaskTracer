@@ -23,7 +23,7 @@ It’s perfect for developers who want to quickly find unfinished tasks or remin
 ## Quick start:
 download the Exe from the releases Tab on Github
 
-## 🚀 Getting Started
+## 🚀 Compiling the code yourself
 
 ### 1. Clone the repository
 ```bash
