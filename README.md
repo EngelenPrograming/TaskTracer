@@ -1,7 +1,10 @@
-# 🧭 TaskTracer
+# 🧭 Handy for Project Managers
+TaskTracer automatically scans your entire codebase and collects all TODO comments — no IDE required. This makes it an excellent tool for project managers who want a quick, high-level overview of unfinished tasks or pending improvements directly from the source code, helping bridge the gap between developers and management.
+
 
 **TaskTracer** is a lightweight desktop tool built with **Avalonia** and **ReactiveUI** that scans your source code for `TODO` comments and organizes them in one place.  
 It’s perfect for developers who want to quickly find unfinished tasks or reminders scattered throughout their codebase.
+
 
 ![TaskTracer Screenshot](TaskTrace/images/program.png)
 
