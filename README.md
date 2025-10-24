@@ -8,6 +8,10 @@ It’s perfect for developers who want to quickly find unfinished tasks or remin
 
 ![TaskTracer Screenshot](TaskTrace/images/program.png)
 
+## Small donations
+in case you find this handy or you would like to support my developing career.
+- https://www.paypal.com/donate/?hosted_button_id=FGZYCX4Q4BNN6
+
 ---
 
 ## ✨ Features
